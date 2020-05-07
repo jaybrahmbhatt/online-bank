@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    .inner
+        form(action="/withdraw",method="POST", class="card")
+            h2 Withdraw Money
+            label(for="currentAmount") Currently Availalbe Money
+            input(type="text" name= "currentAmount" value=user.amount readonly )
+            label(for="amount") Amount You would like to Withdraw
+            input(type="Number", name="amount" required)
+            label(for="email") Email Address
+            input(type="email" name= "email" value=user.email readonly)
+            label(for="description") Desription
+            input(type="text" placeholder="Optional.." name="description")
+            input.button(type="submit" value="Proceed")

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    .inner
+        form(action="/dashboard",method="POST", class="card")
+            h2 Welcome  to the Dashboard
+            label(for="currentAmount") Currently Available Money
+            input(type="text" name= "currentAmount" value=user.amount readonly )
+            label(for="email") Your Email Address
+            input(type="email" name= "email" value=user.email readonly)
+            input.button(type="submit" value="Close account")
+

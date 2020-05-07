@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    .inner
+        h2= title
+        .map
+            .autocomplete
+                input.autocomplete__input(type= "text" placeholder="Search for nearest ATM" 
+                name="geolocate")
+            #map
+                p Loading map..
+        form.form(action="/atm",method="POST")
+            label(for="currentAmount") Currently Available Money
+            input(type="text" name= "currentAmount" value=user.amount readonly )
+            label(for="amount") Amount You would like to Withdraw
+            input(type="Number", name="amount" required)
+            label(for="pin") Enter your PIN number
+            input(type="password" name= "pin" required)
+            input(type="email" name= "email" value=user.email hidden)
+            input.button(type="submit" value="Submit")

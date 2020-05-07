@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    .inner
+        form(action="/transfer",method="POST", class="card")
+            h2 Transfer Money
+            label(for="payee") Payee
+            input(type="text")(name="payee" required)
+            label(for="email") Email-ID of Payee
+            input(type="email")(name="email" required)
+            label(for="amount") Amount
+            input(type="Number", name="amount" required)
+            label(for="currentAmount") Currently Availalbe Money
+            input(type="text" name= "currentAmount" value=user.amount readonly )
+            label(for="emailOfPayer") Email-ID of Payer
+            input(type="email")(name="emailOfPayer" required)
+            label(for="description") Desription
+            input(type="text" placeholder="Optional..")(name="description")
+            input.button(type="submit" value="Proceed")
